@@ -172,7 +172,7 @@ function scrollHeader() {
 }
 window.addEventListener("scroll", scrollHeader);
 
-/*==================== CHANGE COLOR HEADER ====================*/
+/*==================== CHANGE COLOR ICON ====================*/
 function scrollNav() {
   let nav = document.getElementsByClassName("nav__link");
   let i;
@@ -183,6 +183,24 @@ function scrollNav() {
   }
 }
 window.addEventListener("scroll", scrollNav);
+
+/*==================== CHANGE COLOR sub-menu ====================*/
+function scrollSubmenu() {
+  let submenu = document.getElementById("sub-menu");
+  // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+    if (this.scrollY >= 80) submenu.classList.add("scroll-sub-menu");
+    else submenu.classList.remove("scroll-sub-menu");
+}
+window.addEventListener("scroll", scrollSubmenu);
+
+/*==================== CHANGE BACKGROUND HEADER ====================*/
+function scrollIcon() {
+  const icon = document.getElementById("theme-button");
+  // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+  if (this.scrollY >= 80) icon.classList.add("scroll-nav__link");
+  else icon.classList.remove("scroll-nav__link");
+}
+window.addEventListener("scroll", scrollIcon);
 
 /*==================== CHANGE COLOR LOGO ====================*/
 function scrollLogo() {
@@ -209,6 +227,7 @@ window.addEventListener("scroll", scrollUp);
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "fa-sun";
+
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem("selected-theme");
